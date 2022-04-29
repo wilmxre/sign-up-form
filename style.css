@@ -1,8 +1,18 @@
-:root {
+* {
   margin: 0;
   padding: 0;
+}
+
+@font-face {
+  font-family: 'Stanley';
+  src: url(./resources/stanley.ttf);
+}
+
+:root {
   box-sizing: border-box;
   font-family: 'Roboto Slab', serif;
+  background-image: url('./resources/bg.avif');
+  user-select: none;
 }
 
 body {
@@ -15,9 +25,25 @@ body {
 
 .form-container {
   display: flex;
+  flex-direction: column;
+  width: 100vw;
+  padding: 40px 0 16px 0;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.form-container .header {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 24px;
+  font-family: 'Stanley';
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+.section-container {
+  display: flex;
+  justify-content: center;
   gap: 80px;
-  padding: 40px 60px 16px 60px;
-  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .left {
@@ -38,14 +64,35 @@ body {
 
 .section label {
   padding-bottom: 4px;
-  text-transform: uppercase;
   letter-spacing: 1.5px;
-  font-size: .75rem;
+  color: #ffffff;
+}
+
+.section span {
+  background-color: rgba(0, 0, 0, .5);
+  padding: 2px 4px;
 }
 
 .section input {
-  width: 200px;
-  padding: 4px;
-  border: solid 1px #000000;
-  border-radius: 2px;
+  width: 250px;
+  padding: 12px;
+  border: solid 2px #000000;
+  border-radius: 8px;
+}
+
+.section input:focus {
+  outline: none;
+  border: 2px solid #EE964B;
+}
+
+.btn button {
+  all: unset;
+  margin: 0 auto;
+  width: 120px;
+  padding: 12px;
+  background-color: #687E25;
+  color: #000000;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  text-align: center;
 }
