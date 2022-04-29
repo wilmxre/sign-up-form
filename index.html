@@ -14,13 +14,13 @@
 
 <body>
   <div class="container">
-    <form action="" method="post" class="form-container">
+    <form action="http://httpbin.org/post" method="post" class="form-container">
       <span class="header">Sign Up Now!</span>
       <div class="section-container">
         <div class="left">
           <div class="section">
             <label for="fname"><span>First Name</span></label>
-            <input type="text" id="fname" name="first_name" placeholder="John" required>
+            <input type="text" id="fname" name="first_name" placeholder="John" minlength="2" maxlength="15" required>
           </div>
           <div class="section">
             <label for="email"><span>Email</span></label>
@@ -28,22 +28,29 @@
           </div>
           <div class="section">
             <label for="pwd"><span>Password</span></label>
-            <input type="password" id="pwd" name="password">
+            <input type="password" id="pwd" name="password" minlength="8"
+              pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+              title="Password must contain: uppercase, lowercase and number"
+              placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" required>
           </div>
         </div>
 
         <div class="right">
           <div class="section">
             <label for="lname"><span>Last Name</span></label>
-            <input type="text" id="lname" name="last_name" placeholder="Doe" required>
+            <input type="text" id="lname" name="last_name" placeholder="Doe" minlength="2" maxlength="15" required>
           </div>
           <div class="section">
             <label for="pnumber"><span>Phone Number</span></label>
-            <input type="tel" id="pnumber" name="phone_number" placeholder="0748123456">
+            <input type="tel" id="pnumber" name="phone_number" pattern="[0-9]{10}"
+              title="Phone Number must contain: valid numbers with the length of 10" placeholder="0748123456" required>
           </div>
           <div class="section">
             <label for="confirmpwd"><span>Confirm Password</span></label>
-            <input type="password" id="confirmpwd" name="confirm_password">
+            <input type="password" id="confirmpwd" name="confirm_password" minlength="8"
+              pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+              title="Password must contain: uppercase, lowercase and number"
+              placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" required>
           </div>
         </div>
       </div>

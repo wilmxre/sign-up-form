@@ -13,6 +13,9 @@
   font-family: 'Roboto Slab', serif;
   background-image: url('./resources/bg.avif');
   user-select: none;
+  --valid-color: #829E2E;
+  --invalid-color: #C3423F;
+  --select-color: #F9A620;
 }
 
 body {
@@ -82,7 +85,17 @@ body {
 
 .section input:focus {
   outline: none;
-  border: 2px solid #EE964B;
+  border: 2px solid var(--select-color);
+}
+
+.section input:valid {
+  outline: none;
+  border: 2px solid var(--valid-color);
+}
+
+.section input:not(:placeholder-shown):invalid {
+  outline: none;
+  border: 2px solid var(--invalid-color);
 }
 
 .btn button {
@@ -90,9 +103,18 @@ body {
   margin: 0 auto;
   width: 120px;
   padding: 12px;
-  background-color: #687E25;
+  background-color: var(--valid-color);
   color: #000000;
   border: 2px solid #000000;
   border-radius: 8px;
   text-align: center;
+  cursor: pointer;
+}
+
+.btn button:hover {
+  background-color: #8FAE32;
+}
+
+.btn button:active {
+  background-color: #758E29;
 }
