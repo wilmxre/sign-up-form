@@ -69,6 +69,22 @@
       <img src="./resources/github.png">
     </a>
   </div>
+  <script>
+    const btn = document.querySelector('.section button');
+    const pwd1 = document.querySelector('#pwd');
+    const pwd2 = document.querySelector('#confirmpwd');
+
+    btn.addEventListener('click', (e) => {
+      if (pwd1.value == pwd2.value) {
+        pwd2.setCustomValidity('');
+      }
+
+      else if (pwd1.value != pwd2.value) {
+        pwd2.setCustomValidity("Passwords don't match!");
+      }
+    });
+
+  </script>
 </body>
 
 </html>
